@@ -45,3 +45,13 @@
   height: 310px;
   margin: 5px;
 }
+.login {
+  height: 35px;
+  width: 110px;
+  margin-top: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+}
