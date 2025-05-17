@@ -1,16 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "Namaste React🚀"),
-    React.createElement("h2", {}, "by Akshay Saini"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-]);
+const elem = <span>React Element</span>;
+
+// React Component
+const Heading = () => {
+  return <h1 id="heading">{elem}Namaste React using Functional Component</h1>;
+};
+
+// React Component
+const Title = function () {
+  return (
+    <div>
+      <h1 id="heading">Namaste React</h1>
+    </div>
+  );
+};
+
+// React Component
+const HeadingComponent = () => (
+  <div id="container">
+    <Heading />
+    <Title />
+    <Title></Title>
+    {Title()}
+    <h1 id="heading">Namaste React using Functional Component2</h1>
+  </div>
+);
+
+// React Element
+const heading = React.createElement("h1", { id: "heading" }, "Namaste React🚀");
+console.log(heading);
+
+// React Element
+const jsxHeading = <h1 id="heading">Namaste React using JSX</h1>;
+console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<HeadingComponent />);
